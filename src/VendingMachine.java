@@ -31,7 +31,7 @@ public class VendingMachine {
         enterMoney();
         do{
             printMenu();
-            System.out.println("Your current balance is: " + (balance - returnPrice(item)));
+            System.out.println("Your current balance is:$" + (balance - returnPrice(item)));
             System.out.println("Please enter the food item you would like: ");
             String choice = scan.nextLine();
             item.add(choice);
@@ -44,8 +44,16 @@ public class VendingMachine {
         }while(reply.equals("Yes"));
 
         //prints out the total price of the items the user wants
-        System.out.println("The cost of your request is: " + returnPrice(item));
-        System.out.println("Your change will be " + (balance - returnPrice(item)));
+        System.out.println("The cost of your request is:$" + returnPrice(item));
+        System.out.println("Would you like to cancel your order? Yes|No");
+        reply = scan.nextLine();
+        if(reply.equals("Yes")){
+            System.out.println("Here is your $" + balance + " returned. Have a great day!");
+        }else{
+            System.out.println("Your change will be $" + (balance - returnPrice(item)));
+            System.out.println("Enjoy the rest of your day and thank you for stopping by " + NAME + "!");
+        }
+
 
     }
 

@@ -1,6 +1,6 @@
 /*
     Vending Machine
-    By: Emily Balboni and Thomas Kwasnak
+    By: Emily Balboni and Thomas Kwashnak
     February 16, 2021
     CSC 109
     Professor Alex

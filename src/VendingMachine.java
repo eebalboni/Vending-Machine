@@ -3,7 +3,7 @@
     By: Emily Balboni and Thomas Kwashnak
     February 16, 2021
     CSC 109
-    Professor Alex
+    Professor Alex Thimineur
  */
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,6 +18,7 @@ public class VendingMachine {
     private static int balance;
     private static String reply = "";
 
+    //items in the vending machine
     private static final HashMap <String,Integer> options = new HashMap<String, Integer>(){{
         put("Apple",2);
         put("Doritos",3);
@@ -29,6 +30,8 @@ public class VendingMachine {
         System.out.println("Welcome to the " + NAME);
         printInstructions();
         enterMoney();
+
+        //start of machine
         do{
             printMenu();
             System.out.println("Your current balance is:$" + (balance - returnPrice(item)));
@@ -56,7 +59,7 @@ public class VendingMachine {
 
 
     }
-
+    //sets balance for user
     public static void enterMoney() {
         System.out.println("Please type the number of dollars you would like to enter");
         balance = Integer.parseInt(scan.nextLine());
@@ -80,7 +83,6 @@ public class VendingMachine {
         return c;
     }
 
-    //make nicer later
     //returns printed menu
     public static void printMenu(){
        System.out.println(options.entrySet());
